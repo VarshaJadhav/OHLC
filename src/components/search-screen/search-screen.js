@@ -5,9 +5,7 @@ class SearchScreen extends Component {
   render() {
     return (
       <div>
-	      	<div className="page-not-found main-height">
-		        <p>Search Screen</p>
-	        </div>
+	      <p>Search Screen</p>
       </div>
     );
   }

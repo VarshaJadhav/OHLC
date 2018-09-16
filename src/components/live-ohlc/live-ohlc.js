@@ -5,9 +5,7 @@ class LiveOhlc extends Component {
   render() {
     return (
       <div>
-	      	<div className="page-not-found main-height">
-		        <p>LiveOhlc Screen</p>
-	        </div>
+	      <p>LiveOhlc Screen</p>
       </div>
     );
   }

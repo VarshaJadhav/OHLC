@@ -5,9 +5,7 @@ class LiveChart extends Component {
   render() {
     return (
       <div>
-	      	<div className="page-not-found main-height">
-		        <p>LiveChart Screen</p>
-	        </div>
+	      <p>LiveChart Screen</p>
       </div>
     );
   }

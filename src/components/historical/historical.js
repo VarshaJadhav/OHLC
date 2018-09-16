@@ -5,9 +5,7 @@ class Historical extends Component {
   render() {
     return (
       <div>
-	      	<div className="page-not-found main-height">
-		        <p>Historical Screen</p>
-	        </div>
+		    <p>Historical Screen</p>
       </div>
     );
   }
