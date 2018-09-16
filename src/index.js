@@ -4,10 +4,11 @@ import { Provider } from 'react-redux';
 
 import App from './app/app';
 import store from './reducers';
+import Router from './routes';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render((
   <Provider store={store}>
-      <App />
+      <Router />
   </Provider>), document.getElementById('root'));
 registerServiceWorker();
