@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { debounce } from 'throttle-debounce';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+
+import './search-input-style.scss';
 
 class SearchInput extends Component {
   constructor(props) {
@@ -91,9 +93,11 @@ class SearchInput extends Component {
   }
 
   render() {
+    const { searchContainerStyle, searchInputStyle } = this.props;
     return (
-      <div>
+      <div className={`search-container ${searchContainerStyle || '' }`}>
         <input type="text"
+          className={`search-input ${searchInputStyle || '' }`}
           placeholder="Search..."
           value={this.state.searchTerm}
           onChange={e => this.onChangeOfInput(e)} autoFocus />
@@ -103,7 +107,8 @@ class SearchInput extends Component {
 }
 
 SearchInput.propTypes = {
-  className: PropTypes.string,
+  searchContainerStyle: PropTypes.string,
+  searchInputStyle: PropTypes.string,
   onChangeOfInput: PropTypes.func,
   dataList: PropTypes.arrayOf(PropTypes.object),
   searchKeys: PropTypes.arrayOf(PropTypes.string)

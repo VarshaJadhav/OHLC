@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import Routes from '../../routes';
 import { HEADER_NAV } from '../../constants';
 
+import './app-style.scss';
+
 class App extends Component {
   renderNav = (headerNav) => {
     return headerNav.map(navOption => {
@@ -17,15 +19,13 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <header>
-          <nav>
-            <ul>
-              {this.renderNav(HEADER_NAV)}
-            </ul>
-          </nav>
+          <ul className="wrapper">
+            {this.renderNav(HEADER_NAV)}
+          </ul>
         </header>
-        <main>
+        <main className="wrapper">
           <Routes />
         </main>
         <footer></footer>

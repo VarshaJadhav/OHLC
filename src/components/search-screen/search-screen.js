@@ -4,6 +4,8 @@ import SearchInput from '../common/search-input/search-input';
 
 import { USER_DATA } from '../../constants';
 
+import './search-style.scss';
+
 class SearchScreen extends Component {
   constructor(props) {
     super(props);
@@ -19,11 +21,11 @@ class SearchScreen extends Component {
       return this.state.filteredData.map(item => {
         return (
         <li key={item._id}>
-          <span>{item._id}</span>
-          <span>{item.name.first}</span>
-          <span>{item.name.last}</span>
-          <span>{item.email}</span>
-          <span>{item.address.pincode}</span>
+          <span>ID: {item._id}</span>
+          <span>Firstname: {item.name.first}</span>
+          <span>Lastname: {item.name.last}</span>
+          <span>Email: {item.email}</span>
+          <span>Pincode: {item.address.pincode}</span>
         </li>
         );
       })
@@ -34,21 +36,14 @@ class SearchScreen extends Component {
 
   render() {
     return (
-      <div>
-	      <p>Search Screen</p>
+      <div className="search-container">
+	      <h1>Search Screen</h1>
         <SearchInput
           dataList={USER_DATA}
           searchKeys={['email', 'tags', 'address', 'name']}
           catchFilteredData={this.catchFilteredData}
         />
-        <ul>
-          <li>
-            <span>ID</span>
-            <span>Firstname</span>
-            <span>Lastname</span>
-            <span>Email</span>
-            <span>Pincode</span>
-          </li>
+        <ul className="search-nav">
           {this.renderFilteredList()}
         </ul>
       </div>
