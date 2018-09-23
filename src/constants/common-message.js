@@ -1,0 +1,1 @@
+export const NETWORK_FAILURE_MSG = 'Unable to connect! Please check your internet connection and try again.'
