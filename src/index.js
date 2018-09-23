@@ -7,6 +7,8 @@ import App from './components/app/app';
 import store from './reducers';
 import registerServiceWorker from './registerServiceWorker';
 
+import './assets/common-styles/reset.scss';
+
 ReactDOM.render((
   <BrowserRouter>
     <Provider store={store}>
