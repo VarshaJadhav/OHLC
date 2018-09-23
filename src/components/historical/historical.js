@@ -10,6 +10,7 @@ class Historical extends Component {
   }
 
   render() {
+    console.log(this.props.historicalData);
     return (
       <div>
 		    <p>Historical Screen</p>
