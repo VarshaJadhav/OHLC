@@ -1,7 +1,14 @@
 // React modules
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { getHistoricalData } from '../../actions/historical-action';
 
 class Historical extends Component {
+  componentDidMount() {
+    this.props.getHistoricalData();
+  }
+
   render() {
     return (
       <div>
@@ -11,4 +18,16 @@ class Historical extends Component {
   }
 }
 
-export default Historical;
+const mapStateToProps = (reduxState) => {
+  const {
+    'historicalReducer': {
+      historicalData
+    }
+  } = reduxState;
+
+  return {
+    historicalData
+  }
+}
+
+export default connect(mapStateToProps, { getHistoricalData })(Historical);
