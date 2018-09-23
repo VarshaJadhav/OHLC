@@ -19,6 +19,11 @@ class LiveOhlc extends Component {
     });
   }
 
+  componentWillUnmount() {
+    socket.on(`unsubscribe`, data => {
+      console.log({ data })
+    });
+  }
 
   render() {
     return (
